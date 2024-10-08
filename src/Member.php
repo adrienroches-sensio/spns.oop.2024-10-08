@@ -1,6 +1,6 @@
 <?php
 
-class Member implements CanAuthenticate
+class Member extends User implements CanAuthenticate
 {
     /**
      * @var array<class-string, positive-int>
@@ -8,6 +8,8 @@ class Member implements CanAuthenticate
     private static array $count = [];
 
     public function __construct(
+        string $name,
+
         public string $login,
 
         #[SensitiveParameter]
@@ -15,6 +17,8 @@ class Member implements CanAuthenticate
 
         public int    $age,
     ) {
+        parent::__construct($name);
+
         self::$count[static::class] ??= 0;
         self::$count[static::class]++;
     }

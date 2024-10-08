@@ -3,6 +3,7 @@
 class Admin extends Member
 {
     public function __construct(
+        string $name,
         string $login,
 
         #[SensitiveParameter]
@@ -12,7 +13,7 @@ class Admin extends Member
 
         private MemberLevel $level = MemberLevel::Admin
     ) {
-        parent::__construct($login, $password, $age);
+        parent::__construct($name, $login, $password, $age);
     }
 
     #[Override]
