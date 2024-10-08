@@ -15,6 +15,7 @@ class Admin extends Member
         parent::__construct($login, $password, $age);
     }
 
+    #[Override]
     public function auth(string $login, #[SensitiveParameter] string $password): bool
     {
         if ($this->level === MemberLevel::SuperAdmin) {

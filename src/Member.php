@@ -1,6 +1,6 @@
 <?php
 
-class Member
+class Member implements CanAuthenticate
 {
     /**
      * @var array<class-string, positive-int>
@@ -29,6 +29,7 @@ class Member
         return self::$count[static::class];
     }
 
+    #[Override]
     public function auth(
         string $login,
 
