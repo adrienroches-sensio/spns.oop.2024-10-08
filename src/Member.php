@@ -4,11 +4,6 @@ class Member
 {
     public string $login;
 
-    /**
-     * @param string $login
-     * @param string $password
-     * @param string $age
-     */
     public function __construct(
         string $login,
 
