@@ -2,7 +2,10 @@
 
 class Member
 {
-    private static int $count = 0;
+    /**
+     * @var array<class-string, positive-int>
+     */
+    private static array $count = [];
 
     public function __construct(
         public string $login,
@@ -12,17 +15,18 @@ class Member
 
         public int    $age,
     ) {
-        self::$count++;
+        self::$count[static::class] ??= 0;
+        self::$count[static::class]++;
     }
 
     public function __destruct()
     {
-        self::$count--;
+        self::$count[static::class]--;
     }
 
     public static function count(): int
     {
-        return self::$count;
+        return self::$count[static::class];
     }
 
     public function auth(
