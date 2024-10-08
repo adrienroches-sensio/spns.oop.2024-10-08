@@ -25,4 +25,10 @@ class Admin extends Member
 
         return parent::auth($login, $password);
     }
+
+    #[Override]
+    public function __toString(): string
+    {
+        return parent::__toString() . " as {$this->level->label()}";
+    }
 }

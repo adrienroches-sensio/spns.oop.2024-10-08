@@ -45,4 +45,10 @@ class Member extends User implements CanAuthenticate
             $this->password === $password
         ;
     }
+
+    #[Override]
+    public function __toString(): string
+    {
+        return "{$this->getName()} #{$this->login}";
+    }
 }

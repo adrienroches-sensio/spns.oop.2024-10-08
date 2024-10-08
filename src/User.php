@@ -1,6 +1,6 @@
 <?php
 
-class User
+abstract class User
 {
     public function __construct(
         private string $name,
@@ -16,4 +16,6 @@ class User
     {
         $this->name = $name;
     }
+
+    abstract public function __toString(): string;
 }
