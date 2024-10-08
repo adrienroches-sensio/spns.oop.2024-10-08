@@ -2,17 +2,27 @@
 
 class Member
 {
-    public string $login;
+    private static int $count = 0;
 
     public function __construct(
-        string $login,
+        public string $login,
 
         #[SensitiveParameter]
         public string $password,
 
         public int    $age,
     ) {
-        $this->login = $login;
+        self::$count++;
+    }
+
+    public function __destruct()
+    {
+        self::$count--;
+    }
+
+    public static function count(): int
+    {
+        return self::$count;
     }
 
     public function auth(
