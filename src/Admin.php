@@ -17,13 +17,13 @@ class Admin extends Member
     }
 
     #[Override]
-    public function auth(string $login, #[SensitiveParameter] string $password): bool
+    public function auth(string $login, #[SensitiveParameter] string $password): void
     {
         if ($this->level === MemberLevel::SuperAdmin) {
-            return true;
+            return;
         }
 
-        return parent::auth($login, $password);
+        parent::auth($login, $password);
     }
 
     #[Override]

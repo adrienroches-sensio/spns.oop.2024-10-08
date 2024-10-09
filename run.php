@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/src/BadCredentialsException.php';
 require_once __DIR__ . '/src/CanAuthenticate.php';
 require_once __DIR__ . '/src/MemberLevel.php';
 require_once __DIR__ . '/src/User.php';
@@ -34,4 +35,16 @@ echo 'Trying out __toString()' . PHP_EOL;
 echo "Member 2 : {$member2}" . PHP_EOL;
 echo "Admin 1 : {$admin1}" . PHP_EOL;
 echo "Admin 2 : {$admin2}" . PHP_EOL;
+echo '--------------------------------' . PHP_EOL;
+
+echo PHP_EOL;
+
+echo '--------------------------------' . PHP_EOL;
+echo 'Bad credentials' . PHP_EOL;
+
+try {
+    $member2->auth('fake', 'fake');
+} catch (BadCredentialsException $e) {
+    echo $e->getMessage() . PHP_EOL;
+}
 echo '--------------------------------' . PHP_EOL;
