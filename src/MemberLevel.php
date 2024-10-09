@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 enum MemberLevel
 {
     case Admin;

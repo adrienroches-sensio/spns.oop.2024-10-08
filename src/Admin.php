@@ -1,5 +1,10 @@
 <?php
 
+namespace App;
+
+use Override;
+use SensitiveParameter;
+
 class Admin extends Member
 {
     public function __construct(

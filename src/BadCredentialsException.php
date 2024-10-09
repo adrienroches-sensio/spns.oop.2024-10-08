@@ -1,5 +1,10 @@
 <?php
 
+namespace App;
+
+use RuntimeException;
+use Throwable;
+
 class BadCredentialsException extends RuntimeException
 {
     private const BAD_LOGIN = 404;

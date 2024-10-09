@@ -1,5 +1,10 @@
 <?php
 
+namespace App;
+
+use Override;
+use Stringable;
+
 abstract class User implements Stringable
 {
     public function __construct(

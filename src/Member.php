@@ -1,5 +1,10 @@
 <?php
 
+namespace App;
+
+use Override;
+use SensitiveParameter;
+
 class Member extends User implements CanAuthenticate
 {
     /**
