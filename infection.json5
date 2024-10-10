@@ -1,0 +1,20 @@
+{
+    "$schema": "https://raw.githubusercontent.com/infection/infection/0.29.7/resources/schema.json",
+    "source": {
+        "directories": [
+            "src"
+        ]
+    },
+    "mutators": {
+        "@default": true
+    },
+    "phpUnit": {
+        "configDir": ".",
+        "customPath": "vendor\/bin\/phpunit"
+    },
+    "testFramework": "phpunit",
+    "bootstrap": "./vendor/autoload.php",
+    "logs": {
+        "html": "./coverage/infection/mutation-report.html"
+    }
+}

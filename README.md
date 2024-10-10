@@ -44,3 +44,8 @@ $ php ./pattern/proxy.php
 $ # Play with iterators
 $ php ./pattern/iterator.php
 ```
+
+Play with Generics
+------------------
+
+See https://phpstan.org/r/b6e0257b-3e5d-441c-a2e0-a56121b745fc
