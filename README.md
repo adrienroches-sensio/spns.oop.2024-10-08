@@ -24,6 +24,14 @@ Running tests
 $ ./vendor/bin/phpunit --coverage-html ./coverage --testdox
 ```
 
+For mutation testing :
+
+```shell
+$ ./vendor/bin/infection
+$ # or
+$ ./vendor/bin/infection --only-covered
+```
+
 Trying the app
 --------------
 

@@ -45,8 +45,12 @@ class Member extends User implements CanAuthenticate
         #[SensitiveParameter]
         string $password
     ): void {
-        if ($this->login !== $login || $this->password !== $password) {
+        if ($this->login !== $login) {
             throw BadCredentialsException::forLogin($login);
+        }
+
+        if ($this->password !== $password) {
+            throw BadCredentialsException::forPassword($login);
         }
     }
 

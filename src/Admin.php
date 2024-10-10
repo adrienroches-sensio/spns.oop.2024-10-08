@@ -24,7 +24,7 @@ class Admin extends Member
     #[Override]
     public function auth(string $login, #[SensitiveParameter] string $password): void
     {
-        if ($this->level === MemberLevel::SuperAdmin) {
+        if (MemberLevel::SuperAdmin === $this->level) {
             return;
         }
 
