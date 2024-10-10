@@ -57,3 +57,14 @@ Play with Generics
 ------------------
 
 See https://phpstan.org/r/b6e0257b-3e5d-441c-a2e0-a56121b745fc
+
+Links
+-----
+
+* https://docs.cweagans.net/
+* https://getrector.com/
+* https://webassembly.org/
+* https://ocramius.github.io/
+* https://refactoring.guru/
+* https://afilina.com/
+* https://afup.org/talks/?q=http3&hPP=7&idx=afup_talks&p=0&is_v=1
