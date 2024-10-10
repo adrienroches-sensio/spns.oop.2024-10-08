@@ -5,20 +5,19 @@ namespace App;
 use Override;
 use SensitiveParameter;
 
-class Admin extends Member
+class Admin implements Member
 {
     public function __construct(
-        string $name,
-        string $login,
-
-        #[SensitiveParameter]
-        string $password,
-
-        int $age,
+        private Regular $regular,
 
         private MemberLevel $level = MemberLevel::Admin
     ) {
-        parent::__construct($name, $login, $password, $age);
+        Counter::add($this);
+    }
+
+    public function __destruct()
+    {
+        Counter::remove($this);
     }
 
     #[Override]
@@ -28,12 +27,12 @@ class Admin extends Member
             return;
         }
 
-        parent::auth($login, $password);
+        $this->regular->auth($login, $password);
     }
 
     #[Override]
     public function __toString(): string
     {
-        return parent::__toString() . " as {$this->level->label()}";
+        return $this->regular . " as {$this->level->label()}";
     }
 }

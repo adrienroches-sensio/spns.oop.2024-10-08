@@ -2,10 +2,7 @@
 
 namespace App;
 
-use Override;
-use Stringable;
-
-abstract class User implements Stringable
+class User
 {
     public function __construct(
         private string $name,
@@ -21,7 +18,4 @@ abstract class User implements Stringable
     {
         $this->name = $name;
     }
-
-    #[Override]
-    abstract public function __toString(): string;
 }
