@@ -68,3 +68,4 @@ Links
 * https://refactoring.guru/
 * https://afilina.com/
 * https://afup.org/talks/?q=http3&hPP=7&idx=afup_talks&p=0&is_v=1
+* https://bashunit.typeddevs.com/
